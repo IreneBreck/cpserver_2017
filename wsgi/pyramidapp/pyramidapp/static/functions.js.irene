@@ -1,0 +1,156 @@
+
+
+var myPictures = ["Example1.png", "Example2.png"];
+var howMany = myPictures.length - 1;
+var number = 0;
+function chgImg() {
+	var slide = document.getElementById("myImage");
+	slide.src = myPictures[number];
+
+	(number < howMany) ? number++ : number=0;
+}
+setInterval(function(){chgImg()},2000);
+
+function link(ref) {
+	document.getElementById("content").innerHTML = getLink(ref);
+}
+function getLink(ref) {
+		//think about some fancy hide thing to reduce amount of loading
+		//links should actually be loading from a database?
+	var link =     
+		"<h1> Our Vision </h1> \
+        <p> 培育、訓練更多的精英成為投資土地的專材，讓這些專家中的嬴家們能用他們的專業知識和經驗去㨍助更多的普通人去投資一些精挑細選過、沒有暇疵的重點地，利用時間的變化和人潮的走向得以致富。\
+~能像一盞燈去照亮他人的前途是我的義務也是一份榮幸~ </p>    \
+    	<p> By thoroughly educating, collaborating and escorting individuals, we help them to become educated investors who can secure their financial futures in retirement \
+        and children's education by building long-term sustaining wealth through the art and science of landbanking. </p>";
+
+	if (ref == 1) {
+		link = "<h1>List of Events</h1> \
+    	<p class='event'>Fake Event: Click Me</p> \
+        <form action='/SubmitUserProfile/submit' method='post' id='upro'> \
+	<label for='textfield'>First Name:</label> \
+	<input type='text' name='firstname' id='textfield' required> \
+	<label for='textfield2'>Last Name:</label> \
+	<input type='text' name='lastname' id='textfield2' required> \
+	<br><br> \
+	<label for='password'>Password:</label>\
+	<input type='password' name='password' id='password' required> \
+	<br><br> \
+	<label for='email'>Email:</label> \
+	<input type='email' name='email' id='email'> \
+	<br><br> \
+	<label for='tel'>Phone:</label> \
+	<input type='tel' name='phonenumber' id='tel' required> \
+	<br><br> \
+        Which event will you attend? <br> \
+          <label> \
+          <input type='checkbox' name='event_choice' value='Oct-2013-Saturday' id='whichevent_0'> \
+	    Saturday</label> \
+	  <br> \
+	  <label> \
+	    <input type='checkbox' name='event_choice' value='Oct-2013-Sunday' id='whichevent_1'> \
+	    Sunday</label> \
+	 <br><br> \
+	Are you a broker or real estate agent? <br> \
+  		<label> \
+    		<input type='radio' name='agent_q' value='Yes' id='agent_q_0'> \
+    		Yes</label><br> \
+  		<label> \
+    		<input type='radio' name='agent_q' value='No' id='agent_q_1'> \
+    		No</label> \
+	<br><br> \
+       	Have you ever been to a land investment seminar?<br> \
+		<label> \
+		<input type='radio' name='seminar_q' value='Yes' id='seminar_q_0'> \
+		Yes</label> \
+		<br> \
+		<label> \
+		<input type='radio' name='seminar_q' value='No' id='seminar_q_1'> \
+		No</label> \
+	<br><br> \
+	Have you ever invested on any lands?<br> \
+		<label> \
+		<input type='radio' name='land_q' value='Yes' id='lands_q_0'>  \
+		Yes</label> \
+		<br> \
+		<label> \
+		<input type='radio' name='land_q' value='No' id='lands_q_1'> \
+ 		No</label><br> \
+	If yes, <label for='textfield3'>when:</label> \
+		<input type='text' name='when' id='textfield3'> \
+		<label for='textfield4'>where:</label>  \
+		<input type='text' name='where' id='textfield4'> \
+	<br><br> \
+	<input type='submit' value='Submit'> \
+	<input type='reset' value='Reset!'> \
+        </form>";
+	}
+	if (ref == 2) {
+		link = "<h1>Frequently Asked Questions</h1> \
+		<form> \
+		  1) Are you a Broker or Real Estate Agent? \
+			<input type='radio' name='boreAgent' value='Y'>Yes \
+			<input type='radio' name='boreAgent' value='N'>No<br> \
+		  2) Have you ever attended a land investment seminar? \
+			<input type='radio' name='attendedLIS' value='Y'>Yes \
+			<input type='radio' name='attendedLIS' value='N'>No<br> \
+		  3) Have you ever invested in land before? \
+			<input type='radio' name='attendedLIS' value='Y'>Yes \
+			<input type='radio' name='attendedLIS' value='N'>No<br> \
+			 When? <input type='text' name='when'> \
+			 Where? <input type='text' name='where'><br> \
+		  4) How did you find out about us?<br> \
+			<input type='checkbox' name='discoveredBy' value='Referral'>Friend referral<br> \
+			<input type='checkbox' name='discoveredBy' value='Ads'>Newspaper advertising<br> \
+			<input type='checkbox' name='discoveredBy' value='Flyers'>Flyers<br> \
+			<input type='checkbox' name='discoveredBy' value='Radio'>Radio<br> \
+		  Name: <input type='text' name='name'><br> \
+		  Phone Number (Cell): <input type='text' name='cellphone'> \
+		  (Home): <input type='text' name='homephone'><br> \
+		  Email: <input type='text' name='email'><br> \
+		  <input type='submit' value='Submit'> \
+		</form>";
+	}
+	if (ref == 3) {
+		link = "<h1>Contact Information</h1> \
+    	<p>The best way to get into contact with me would be through __________.</p>";
+	}
+	if (ref == 0) {
+		link = "Load Failed";
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.open("GET","form.html",false);
+		xmlhttp.send();
+		link = xmlhttp.responseText;
+	}
+	return link;
+}
+
+
+function elementClicked(e) {
+	var targ;
+	if (!e) var e = window.event;
+	if (e.target) targ = e.target;
+	else if (e.srcElement) targ = e.srcElement;
+	if (targ.nodeType == 3) // defeat Safari bug
+		targ = targ.parentNode;
+	return targ;
+}
+
+function openForm(theEvent) {
+	target = elementClicked(theEvent);
+	if(target.className == "event" && document.getElementById('newTab') == null) {
+		var d = document.createElement("div");
+		d.id = "newTab"; 
+		d.innerHTML = getLink(0);
+		target.appendChild(d);
+	} else {
+		target.removeChild(document.getElementById('newTab'));
+	}
+}

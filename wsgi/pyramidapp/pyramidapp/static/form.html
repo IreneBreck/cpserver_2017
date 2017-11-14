@@ -1,0 +1,44 @@
+<form onsubmit="vali();" action="/SubmitUserProfile/submit" method="post" id="upro">
+ <fieldset>
+    <h3> Event Registration </h3>
+	<p>
+		<label>First Name:</label>
+		<input type="text" name="firstname" id="textfield" required="required">
+		<br><br>
+		
+		<label for="textfield2">Last Name:</label>
+		<input type="text" name="lastname" id="textfield2" required="required">
+		<br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" required="">
+		<br><br>
+
+		<label for="tel">Phone:</label>
+		<input type="tel" name="phonenumber" id="tel" required="required">
+	</p>
+	 
+    <input type="hidden" name="event_choice" value="changeThis" id="selectedEvent">
+
+	Are you a broker or real estate agent? <br>
+	<label><input type="radio" name="agent_q" value="Yes" id="agent_q_0"  required="">Yes</label>
+	<label><input type="radio" name="agent_q" value="No" id="agent_q_1"  required="">No</label><br>
+    
+   	Have you ever been to a land investment seminar?<br>
+	<label><input type="radio" name="seminar_q" value="Yes" id="seminar_q_0" required="">Yes</label>
+	<label><input type="radio" name="seminar_q" value="No" id="seminar_q_1" required="">No</label><br>
+
+	Have you ever invested in any lands?<br>
+	<label><input type="radio" name="land_q" value="Yes" id="lands_q_0"  required="">Yes</label>
+	<label><input type="radio" name="land_q" value="No" id="lands_q_1"   required="">No</label><br>
+	
+	If yes, 
+	<label for="textfield3">when:</label><input type="text" name="when" id="textfield3">
+	<label for="textfield4">where:</label><input type="text" name="where" id="textfield4">
+	<br><br>
+
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset!">
+ </fieldset>
+</form>
+

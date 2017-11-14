@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Attendance</title>
+</head>
+
+<body>
+<%
+    guests = [[{'fname': 'irene'}, {'lname':'Breck'}, {'email':'cccc'}, {'phonenumber': 1234}]]
+%>
+<table>
+    % for row in guests:
+        ${makerow(row)}
+    % endfor
+</table>
+
+<%def name="makerow(row)">
+    <% fname = row[0] %>
+    <% lname = row[1] %>
+    <% email = row[2] %>
+    <% phone = row[3] %>
+    <tr>
+        <td>${fname['fname']}</td>\
+        <td>${lname['lname']}</td>\
+        <td>${email['email']}</td>\
+        <td>${phone['phonenumber']}</td>\
+    </tr>
+</%def>
+
+</body>
+</html>
+

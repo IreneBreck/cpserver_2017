@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>ConfirmSignUp</title>
+</head>
+
+<body>
+<div id="wrapper"></div>
+<header id="top">
+  <h1>Land Banking Seminar Sign Up </h1>  
+</header>
+
+<p> 
+  <h3>Thank you for signing up the seminar on ${request.params['event_choice']}.<br>
+  You will receive an email from us shortly.
+  </h3>
+</p><br>
+<font size="4">Please print for own record.</font><br><br>
+<p>
+  The seminar will be taking place at:<br>
+  <font size="6">Velur Silicon Valley Office - Milpitas:</font><br>
+  145 South Main Street,
+  Suite #145,
+  Milpitas, CA 95035
+</p><br>
+Please review the following information: 
+<table width="263" border="0">
+  <tr>
+    <td width="54">Name:</td>
+    <td width="130">${request.params['firstname']}</td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td>${request.params['email']}</td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td>${request.params['phonenumber']}</td>
+  </tr>
+  <tr>
+    <td>Event:</td>
+    <td>${request.params['event_choice']}</td>
+  </tr>
+</table>
+
+ <header>
+ <h2> 
+  <a href="http://www.celiapan-velur.com">Click here to return to our primary website.</a>
+ </h2>
+</header>
+
+</body>
+</html>

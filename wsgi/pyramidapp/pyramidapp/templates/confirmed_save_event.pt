@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Confirm Added Event</title>
+</head>
+
+<body>
+<div id="wrapper"></div>
+<header id="top">
+  <h1>New Seminar Event </h1>  
+</header>
+
+<p> 
+  <h3>A new event has been added to the database: ${request.params['eventname']}.<br>
+  </h3>
+</p><br>
+<font size="4">Please print for own record.</font><br><br>
+
+Please review the following information: 
+<table width="263" border="0">
+  <tr>
+    <td width="54">Event Name:</td>
+    <td width="130">${request.params['eventname']}</td>
+  </tr>
+  <tr>
+    <td>Date:</td>
+    <td>${request.params['event_date']}</td>
+  </tr>
+  <tr>
+    <td>Discription:</td>
+    <td>${request.params['event_discription']}</td>
+  </tr>
+</table>
+
+ <header>
+ <h2> 
+  <a href="http://www.celiapan-velur.com">Click here to return to our primary website.</a>
+ </h2>
+</header>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+<title>Attendance</title>
+</head>
+
+<body>
+
+<h1>Sign up for ${date} : </h1>
+<br>
+
+<table width="500" border="1">
+    <tr>
+        <td>fname</td>\
+        <td>lname</td>\
+        <td>email</td>\
+        <td>phone</td>\
+        <td>are you an agent?</td>\
+        <td>attend our seminar?</td>\
+        <td>invest on land</td>\
+        <td>when</td>\
+        <td>where</td>
+    </tr>
+    % for row in guests:
+        ${makerow(row)}
+    % endfor
+</table>
+
+<%def name="makerow(row)">
+  <tr>
+    <% fname = row['fname'] %>
+    <% lname = row['lname'] %>
+    <% email = row['email'] %>
+    <% phone = row['phonenumber']   %>
+    <% agent_q   = row['agent_q']   %>
+    <% seminar_q = row['seminar_q'] %>
+    <% land_q    = row['land_q']    %>
+    <% when      = row['when']      %>
+    <% where     = row['where']     %>
+        <td>${fname}</td>\
+        <td>${lname}</td>\
+        <td>${email}</td>\
+        <td>${phone}</td>\
+        <td>${agent_q}</td>\
+        <td>${seminar_q}</td>\
+        <td>${land_q}</td>\
+        <td>${when}</td>\
+        <td>${where}</td>
+  </tr>
+</%def>
+
+</body>
+</html>
+

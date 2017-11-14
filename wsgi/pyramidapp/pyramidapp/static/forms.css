@@ -1,0 +1,87 @@
+/* form style */
+#upro {
+    background:#333 url(/media/img/gradient/h300.png) repeat-x;
+    padding:15px 20px;
+    color:#eee;
+    width:400px;
+    margin:0 auto;
+    position:relative;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+/* nested fieldset */
+#upro fieldset {
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+/* typography */
+#upro h3 { color:#eee; margin-top:0px; }
+#upro p { font-size:12px; }
+
+/* input field */
+#upro input {
+    border:1px solid #444;
+    background-color:#666;
+    padding:5px;
+    color:#ddd;
+    font-size:12px;
+
+    /* CSS3 spicing */
+    text-shadow:1px 1px 1px #000;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+}
+
+#upro input:focus { color:#fff; background-color:#777; }
+#upro input:active { background-color:#888; }
+
+
+/* button */
+#upro button {
+    outline:0;
+    border:1px solid #666;
+}
+
+/* error message */
+.error {
+ 
+    background-color:#FFFE36;
+    font-size:11px;
+    border:1px solid #E1E16D;
+    padding:4px 10px;
+    color:#000;
+    display:block;
+
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius-bottomleft:0;
+    -moz-border-radius-topleft:0;
+    -webkit-border-bottom-left-radius:0;
+    -webkit-border-top-left-radius:0;
+
+    -moz-box-shadow:0 0 6px #ddd;
+    -webkit-box-shadow:0 0 6px #ddd;
+}
+
+.error p {
+    margin:0;
+}
+
+/* field label */
+label {
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+#terms label {
+    float:left;
+}
+
+#terms input {
+    margin:0 5px;
+}
